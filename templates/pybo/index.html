@@ -1,0 +1,18 @@
+{% for serverstatus in serverstatus_list%}
+    <ul>
+    No : {{ serverstatus.no }}
+    server_id : {{ serverstatus.server_id }}
+    temperature : {{ serverstatus.temperature }}
+    humidity : {{ serverstatus.humidity }}
+    reg_date : {{ serverstatus.reg_date }}
+    tempAVG : {{ serverstatus.tempAVG}}
+    humiAVGy : {{ serverstatus.humiAVG }}
+    </ul>
+{% endfor %}
+
+<button onclick="window.location.href='{% url 'pybo:download_pdf' %}'">Download Plot as PDF</button><br>
+<img src="{% url 'pybo:plot' %}" alt="My Plot"><br>
+
+<!--{{ serverstatus_list.0.no }} {{ serverstatus_list.0.temperature}}
+{{ serverstatus_list.1.no }} {{ serverstatus_list.1.temperature}}-->
+
